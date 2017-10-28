@@ -1,28 +1,33 @@
 package com.github.galcyurio.request
 
-import com.github.galcyurio.commons.Forecast
 import groovy.transform.Canonical
 import groovy.transform.builder.Builder
 
 import javax.annotation.Nonnull
 import javax.annotation.Nullable
+
 /**
- * 예보 버전 정보
+ * 초단기 실황 정보, 초단기 예보, 동네 예보 REST API 호출에 필요한 정보
  *
  * @author galcyurio
  */
 @Canonical
 @Builder
-class ForecastVersionCheckRequest {
+class ForecastRequest {
     /**
      * 발표일자 및 발표시각
      */
     @Nonnull Date baseDateTime
 
     /**
-     * 파일 구분
+     * 예보지점 X 좌표
      */
-    @Nonnull Forecast.Operation operation
+    @Nonnull Integer nx
+
+    /**
+     * 예보지점 Y 좌표
+     */
+    @Nonnull Integer ny
 
     /**
      * 한 페이지 결과 수

@@ -3,6 +3,7 @@ def config = [
 
         groovy:'2.3.11',
         retrofit:'2.3.0',
+        guava:'23.2',
         junit:'4.12'
 ]
 
@@ -38,6 +39,8 @@ repositories {
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${config.groovy}"
     compile "com.squareup.retrofit2:retrofit:${config.retrofit}"
+    compile "com.squareup.retrofit2:converter-jackson:${config.retrofit}"
+    compile "com.google.guava:guava:${config.guava}-jre"
 
     testCompile "junit:junit:${config.junit}"
 }

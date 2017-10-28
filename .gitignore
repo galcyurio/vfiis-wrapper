@@ -125,3 +125,6 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 vfiis-wrapper/build/
+
+# Custom ignore file
+/vfiis-wrapper/src/test/groovy/Tester.groovy
