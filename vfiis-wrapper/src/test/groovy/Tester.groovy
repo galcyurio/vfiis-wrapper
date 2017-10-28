@@ -1,6 +1,5 @@
 import com.github.galcyurio.config.Vfiis
 import com.github.galcyurio.core.VfiisService
-import com.github.galcyurio.response.ForecastGribResponse
 import okhttp3.HttpUrl
 import org.junit.Before
 import org.junit.Test
@@ -31,7 +30,7 @@ class Tester {
 
         String serviceKey = URLDecoder.decode("Xh0KCUo1p%2FpDbAPCb94AWn34HZebw2wp0g2kU0BaS3a2POCRTPwgufuhyKEhSH7nKr7LpDQyOu1GxeAhX7iH4g%3D%3D", "utf-8")
 
-        def response = vfiisService.getForecastGribResponse(
+        def response = vfiisService.fetchForecastGrib(
                 serviceKey,
                 "20171028",
                 "0600",

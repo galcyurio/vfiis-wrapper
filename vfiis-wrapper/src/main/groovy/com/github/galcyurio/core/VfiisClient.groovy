@@ -18,6 +18,7 @@ import retrofit2.Retrofit
  *
  * @author galcyurio
  */
+@SuppressWarnings("GroovyUnusedDeclaration")
 class VfiisClient {
     private static VfiisClient instance
 
@@ -36,7 +37,7 @@ class VfiisClient {
         if (instance == null) {
             throw new ExceptionInInitializerError("must initialize first before call getInstance()")
         }
-        return instance;
+        return instance
     }
 
     private VfiisClient(Configuration configuration) {
@@ -55,7 +56,7 @@ class VfiisClient {
      * 검색 조건에 따라 초단기 실황 정보를 제공한다.
      */
     void fetchForecastGrib(ForecastRequest request, Callback<ForecastGribResponse> callback) {
-        mVfiisService.getForecastGribResponse(
+        mVfiisService.fetchForecastGrib(
                 mConfiguration.serviceKey,
                 Util.dateToVfiisBaseDate(request.baseDateTime),
                 Util.dateToVfiisBaseTime(request.baseDateTime),
@@ -68,7 +69,7 @@ class VfiisClient {
      * 검색 조건에 따라 동네 예보 정보를 제공한다.
      */
     void fetchForecastSpaceData(ForecastRequest request, Callback<ForecastSpaceDataResponse> callback) {
-        mVfiisService.getForecastSpaceDataRequest(
+        mVfiisService.fetchForecastSpaceData(
                 mConfiguration.serviceKey,
                 Util.dateToVfiisBaseDate(request.baseDateTime), Util.dateToVfiisBaseTime(request.baseDateTime),
                 request.nx, request.ny,
@@ -80,7 +81,7 @@ class VfiisClient {
      * 검색 조건에 따라 단기 예보 정보를 제공한다.
      */
     void fetchForecastTimeData(ForecastRequest request, Callback<ForecastTimeDataResponse> callback) {
-        mVfiisService.getForecastSpaceDataRequest(
+        mVfiisService.fetchForecastTimeData(
                 mConfiguration.serviceKey,
                 Util.dateToVfiisBaseDate(request.baseDateTime), Util.dateToVfiisBaseTime(request.baseDateTime),
                 request.nx, request.ny,
@@ -92,9 +93,9 @@ class VfiisClient {
      * 검색 조건에 따라 실황 정보를 조회한다.
      */
     void fetchForecastVersionCheck(ForecastVersionCheckRequest request, Callback<ForecastVersionCheckResponse> callback) {
-        mVfiisService.getForecastVersionCheckResponse(
+        mVfiisService.fetchForecastVersionCheck(
                 mConfiguration.serviceKey,
-                request.ftype.value,
+                request.operation.value,
                 Util.dateToVfiisBaseDateTime(request.baseDateTime)
         ).enqueue(new VfiisCallbackImpl<>(callback))
     }
