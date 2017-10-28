@@ -1,5 +1,5 @@
 def config = [
-        version:'0.0.1',
+        version:'0.0.2-SNAPSHOT',
 
         groovy:'2.3.11',
         retrofit:'2.3.0',
