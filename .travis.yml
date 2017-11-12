@@ -1,5 +1,5 @@
 language: groovy
 jdk: 
-  - openjdk7
+  - openjdk8
 script:
-  - gradle clean build
+  - ./gradlew clean build
