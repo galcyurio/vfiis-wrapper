@@ -7,11 +7,11 @@ import retrofit2.Response
 /**
  * @author galcyurio
  */
-class VfiisCallbackImpl <T> implements Callback<T> {
+class VfiisCallback<T> implements Callback<T> {
 
     private Callback<T> mCallback
 
-    VfiisCallbackImpl(Callback<T>  callback) {
+    VfiisCallback(Callback<T> callback) {
         mCallback = callback
     }
 

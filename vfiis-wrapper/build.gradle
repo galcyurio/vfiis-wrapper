@@ -1,10 +1,15 @@
 def config = [
-        version:'0.0.2-SNAPSHOT',
+        version : '0.0.2-SNAPSHOT',
 
-        groovy:'2.3.11',
-        retrofit:'2.3.0',
-        guava:'23.2',
-        junit:'4.12'
+        groovy  : '2.3.11',
+        retrofit: '2.3.0',
+        okhttp: '3.8.0',
+        findBugs: '3.0.2',
+
+        guava   : '23.2',
+        jodaTime : '2.9.9',
+        junit   : '4.12',
+        assertj : '2.6.0'
 ]
 
 group 'com.github.galcyurio'
@@ -32,15 +37,25 @@ buildscript {
     }
 }
 
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${config.groovy}"
+
     compile "com.squareup.retrofit2:retrofit:${config.retrofit}"
     compile "com.squareup.retrofit2:converter-jackson:${config.retrofit}"
-    compile "com.google.guava:guava:${config.guava}-jre"
+    compile "com.squareup.okhttp3:okhttp:${config.okhttp}"
+    compile "com.google.code.findbugs:jsr305:${config.findBugs}"
 
+    testCompile "com.google.guava:guava:${config.guava}-jre"
+    testCompile "joda-time:joda-time:${config.jodaTime}"
     testCompile "junit:junit:${config.junit}"
+    testCompile "org.assertj:assertj-core:${config.assertj}"
+    testCompile "com.squareup.retrofit2:retrofit-mock:${config.retrofit}"
+    testCompile "com.squareup.okhttp3:mockwebserver:${config.okhttp}"
 }

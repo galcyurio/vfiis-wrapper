@@ -9,14 +9,14 @@ import javax.annotation.Nullable
 /**
  * @author galcyurio
  */
-interface VfiisService {
+interface RawVfiisService {
 
     /**
      * 초단기 실황 정보를 조회한다.
      */
-    @GET("service/SecndSrtpdFrcstInfoService2/ForecastGrib?_type=json")
-    Call<Object> fetchForecastGrib(
-            @Nonnull @Query("serviceKey") String serviceKey,
+    @GET("ForecastGrib?_type=json")
+    Call<Map<String, Object>> fetchForecastGrib(
+            @Nonnull @Query(value = "serviceKey", encoded = true) String serviceKey,
             @Nonnull @Query("base_date") String baseDate,
             @Nonnull @Query("base_time") String baseTime,
             @Nonnull @Query("nx") Integer nx,
@@ -28,9 +28,9 @@ interface VfiisService {
     /**
      * 동네 예보를 조회한다.
      */
-    @GET("service/SecndSrtpdFrcstInfoService2/ForecastTimeData?_type=json")
-    Call<Object> fetchForecastSpaceData(
-            @Nonnull @Query("serviceKey") String serviceKey,
+    @GET("ForecastTimeData?_type=json")
+    Call<Map<String, Object>> fetchForecastSpaceData(
+            @Nonnull @Query(value = "serviceKey", encoded = true) String serviceKey,
             @Nonnull @Query("base_date") String baseDate,
             @Nonnull @Query("base_time") String baseTime,
             @Nonnull @Query("nx") Integer nx,
@@ -42,9 +42,9 @@ interface VfiisService {
     /**
      * 초단기 예보를 조회한다.
      */
-    @GET("service/SecndSrtpdFrcstInfoService2/ForecastSpaceData?_type=json")
-    Call<Object> fetchForecastTimeData(
-            @Nonnull @Query("serviceKey") String serviceKey,
+    @GET("ForecastSpaceData?_type=json")
+    Call<Map<String, Object>> fetchForecastTimeData(
+            @Nonnull @Query(value = "serviceKey", encoded = true) String serviceKey,
             @Nonnull @Query("base_date") String baseDate,
             @Nonnull @Query("base_time") String baseTime,
             @Nonnull @Query("nx") Integer nx,
@@ -56,9 +56,9 @@ interface VfiisService {
     /**
      * 예보 버전 정보를 조회한다.
      */
-    @GET("service/SecndSrtpdFrcstInfoService2/ForecastVersionCheck?_type=json")
-    Call<Object> fetchForecastVersionCheck(
-            @Nonnull @Query("serviceKey") String serviceKey,
+    @GET("ForecastVersionCheck?_type=json")
+    Call<Map<String, Object>> fetchForecastVersionCheck(
+            @Nonnull @Query(value = "serviceKey", encoded = true) String serviceKey,
             @Nonnull @Query("ftype") String ftype,
             @Nonnull @Query("basedatetime") String baseDateTime
     )

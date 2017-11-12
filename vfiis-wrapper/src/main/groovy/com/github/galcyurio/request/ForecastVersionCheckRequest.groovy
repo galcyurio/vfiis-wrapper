@@ -2,7 +2,7 @@ package com.github.galcyurio.request
 
 import com.github.galcyurio.commons.Forecast
 import groovy.transform.Canonical
-import groovy.transform.builder.Builder
+import groovy.transform.TupleConstructor
 
 import javax.annotation.Nonnull
 import javax.annotation.Nullable
@@ -12,7 +12,7 @@ import javax.annotation.Nullable
  * @author galcyurio
  */
 @Canonical
-@Builder
+@TupleConstructor
 class ForecastVersionCheckRequest {
     /**
      * 발표일자 및 발표시각
@@ -33,4 +33,9 @@ class ForecastVersionCheckRequest {
      * 페이지 번호
      */
     @Nullable Integer pageNo
+
+    ForecastVersionCheckRequest(@Nonnull Date baseDateTime, @Nonnull Forecast.Operation operation) {
+        this.baseDateTime = baseDateTime
+        this.operation = operation
+    }
 }

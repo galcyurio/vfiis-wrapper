@@ -5,6 +5,5 @@ package com.github.galcyurio.config
  */
 @SuppressWarnings("GroovyUnusedDeclaration")
 class Vfiis {
-    public static final String SCHEME = "http"
-    public static final String HOST = "newsky2.kma.go.kr"
+    public static final String BASE_URL = "http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/"
 }

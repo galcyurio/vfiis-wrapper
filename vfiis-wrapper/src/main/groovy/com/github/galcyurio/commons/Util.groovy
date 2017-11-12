@@ -30,9 +30,11 @@ class Util {
 
     static Integer latitudeToNx(double latitude) {
         // TODO: 위도를 x 좌표로 변환
+        return null
     }
 
     static Integer longitudeToNy(double longitude) {
         // TODO: 경도를 y 좌표로 변환
+        return null
     }
 }

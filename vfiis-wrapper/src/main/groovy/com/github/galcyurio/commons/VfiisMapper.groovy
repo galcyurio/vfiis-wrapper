@@ -12,17 +12,21 @@ import org.omg.CORBA.Object
 class VfiisMapper {
     ForecastGribResponse mapGrib(Map<String, Object> response) {
         // TODO:
+        return null
     }
 
     ForecastSpaceDataResponse mapSpaceData(Map<String, Object> response) {
         // TODO:
+        return null
     }
 
     ForecastTimeDataResponse mapTimeData(Map<String, Object> response) {
         // TODO:
+        return null
     }
 
     ForecastVersionCheckResponse mapVersionCheck(Map<String, Object> response) {
         // TODO:
+        return null
     }
 }

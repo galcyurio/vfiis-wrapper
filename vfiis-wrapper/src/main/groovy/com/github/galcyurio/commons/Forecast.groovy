@@ -1,5 +1,4 @@
 package com.github.galcyurio.commons
-
 /**
  * @author galcyurio
  */
@@ -21,17 +20,20 @@ class Forecast {
          */
         SPACE_DATA("SHRT")
 
-        Operation(String value) {}
         String value
+
+        Operation(String value) { this.value = value }
+
+        String value() { return value }
     }
 
     // TODO: 기상 코드값 정리
-    
+
     /**
      * 하늘 상태
      */
     enum SKY {
-        
+
     }
 
     /**
