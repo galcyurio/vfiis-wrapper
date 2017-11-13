@@ -3,10 +3,15 @@
 개발 중에 있으며 현재는 raw data 를 뽑아내는 수준밖에 되지 않는다.
 
 ## Getting Started
-1. dependency 추가
+1. repository, dependency 추가
 
 __Maven__
 ````xml
+<repository>
+    <id>jcenter</id>
+    <url>https://jcenter.bintray.com</url>
+</repository>
+
 <dependency>
   <groupId>com.github.galcyurio</groupId>
   <artifactId>vfiis-wrapper</artifactId>
@@ -16,6 +21,11 @@ __Maven__
 
 __Gradle__
 ````gradle
+repositories{
+  jcenter()
+}
+// ....
+
 compile 'com.github.galcyurio:vfiis-wrapper:0.1.0'
 ````
 
