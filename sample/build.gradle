@@ -12,6 +12,4 @@ repositories {
 
 dependencies {
     compile project(":vfiis-wrapper")
-
-    testCompile libs.junit, libs.assertj
 }
