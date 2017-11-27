@@ -20,10 +20,11 @@ import retrofit2.Call;
  */
 public class RawVfiisClientTest {
     LocalDateTime baseDateTime;
+    Integer nx = 60, ny = 127;
 
     @BeforeClass
     public static void setUpStatic() throws Exception {
-        RawVfiisClient.initialize(new Configuration(Tester.serviceKey));
+        RawVfiisClient.initialize(new Configuration("SERVICE_KEY"));
     }
 
     @Before
@@ -33,21 +34,21 @@ public class RawVfiisClientTest {
 
     @Test
     public void fetchForecastGrib() throws Exception {
-        ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), Tester.nx, Tester.ny);
+        ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), nx, ny);
         Map<String, Object> body = RawVfiisClient.getInstance().fetchForecastGrib(request).execute().body();
         System.out.println(body);
     }
 
     @Test
     public void fetchForecastSpaceData() throws Exception {
-        ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), Tester.nx, Tester.ny);
+        ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), nx, ny);
         Map<String, Object> body = RawVfiisClient.getInstance().fetchForecastSpaceData(request).execute().body();
         System.out.println(body);
     }
 
     @Test
     public void fetchForecastTimeData() throws Exception {
-        ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), Tester.nx, Tester.ny);
+        ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), nx, ny);
         Map<String, Object> body = RawVfiisClient.getInstance().fetchForecastTimeData(request).execute().body();
         System.out.println(body);
     }
