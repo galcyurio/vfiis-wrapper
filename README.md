@@ -5,21 +5,8 @@
 ## Getting Started
 1. repository, dependency 추가
 
-__Maven__
-````xml
-<repository>
-    <id>jcenter</id>
-    <url>https://jcenter.bintray.com</url>
-</repository>
-
-<dependency>
-  <groupId>com.github.galcyurio</groupId>
-  <artifactId>vfiis-wrapper</artifactId>
-  <version>0.1.0</version>
-</dependency>
-````
-
 __Gradle__
+
 ````gradle
 repositories{
   jcenter()
@@ -28,6 +15,10 @@ repositories{
 
 compile 'com.github.galcyurio:vfiis-wrapper:0.1.0'
 ````
+
+__Maven__
+TODO: 추후 Maven 을 지원할 예정
+
 
 2. RawVfiisClient 를 통해 raw 데이터 출력
 ````java
