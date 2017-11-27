@@ -1,4 +1,8 @@
 # vfiis-wrapper
+[![Build](https://travis-ci.org/galcyurio/village-forecast-information-inquiry-service-wrapper.svg?branch=master)](https://travis-ci.org/galcyurio/village-forecast-information-inquiry-service-wrapper)
+[![Download](https://api.bintray.com/packages/galcyurio/maven/vfiis-wrapper/images/download.svg)](https://bintray.com/galcyurio/maven/vfiis-wrapper/_latestVersion)
+
+## Introduction 
 동네 예보 조회 서비스 wrapper library  
 개발 중에 있으며 현재는 raw data 를 뽑아내는 수준밖에 되지 않는다.
 
