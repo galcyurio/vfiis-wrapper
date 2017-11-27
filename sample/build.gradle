@@ -13,6 +13,5 @@ repositories {
 dependencies {
     compile project(":vfiis-wrapper")
 
-    testCompile "junit:junit:4.12"
-    testCompile "org.assertj:assertj-core:2.6.0"
+    testCompile libs.junit, libs.assertj
 }
