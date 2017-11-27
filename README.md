@@ -24,7 +24,7 @@ TODO: 추후 Maven 을 지원할 예정
 ````java
 public class RawVfiisSample {
     public static void main(String[] args) {
-        RawVfiisClient.initialize(new Configuration(Tester.serviceKey));
+        RawVfiisClient.initialize(new Configuration("SERVICE_KEY"));
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(2017, Calendar.NOVEMBER, 12, 2, 0, 0);
