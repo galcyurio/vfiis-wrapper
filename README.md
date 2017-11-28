@@ -1,5 +1,5 @@
 # vfiis-wrapper
-[![Build](https://travis-ci.org/galcyurio/village-forecast-information-inquiry-service-wrapper.svg?branch=master)](https://travis-ci.org/galcyurio/village-forecast-information-inquiry-service-wrapper)
+[![master branch build](https://travis-ci.org/galcyurio/village-forecast-information-inquiry-service-wrapper.svg?branch=master)](https://travis-ci.org/galcyurio/village-forecast-information-inquiry-service-wrapper)
 [![Download](https://api.bintray.com/packages/galcyurio/maven/vfiis-wrapper/images/download.svg)](https://bintray.com/galcyurio/maven/vfiis-wrapper/_latestVersion)
 
 ## Introduction 
@@ -21,8 +21,9 @@ compile 'com.github.galcyurio:vfiis-wrapper:0.1.0'
 ````
 
 __Maven__
+````
 TODO: 추후 Maven 을 지원할 예정
-
+````
 
 2. RawVfiisClient 를 통해 raw 데이터 출력
 ````java
