@@ -45,4 +45,35 @@ public class RawVfiisClientMockUnitTest {
                 .execute().body();
         System.out.println(body);
     }
+
+    @Test
+    public void fetchForecastSpaceData() throws Exception {
+        Map<String, Object> body = sMockRawVfiisService.fetchForecastSpaceData(
+                "",
+                "", "",
+                0, 0,
+                0, 0)
+                .execute().body();
+        System.out.println(body);
+    }
+
+    @Test
+    public void fetchForecastTimeData() throws Exception {
+        Map<String, Object> body = sMockRawVfiisService.fetchForecastTimeData(
+                "",
+                "", "",
+                0, 0,
+                0, 0)
+                .execute().body();
+        System.out.println(body);
+    }
+
+    @Test
+    public void fetchForecastVersionCheck() throws Exception {
+        Map<String, Object> body = sMockRawVfiisService.fetchForecastVersionCheck(
+                "", "", "")
+                .execute().body();
+        System.out.println(body);
+    }
+
 }
