@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vfiis-wrapper/vfiis-wrapper.iml" filepath="$PROJECT_DIR$/.idea/modules/vfiis-wrapper/vfiis-wrapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/vfiis-wrapper.iml" filepath="$PROJECT_DIR$/.idea/modules/vfiis-wrapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/village-forecast-information-inquiry-service.iml" filepath="$PROJECT_DIR$/.idea/modules/village-forecast-information-inquiry-service.iml" />
     </modules>
