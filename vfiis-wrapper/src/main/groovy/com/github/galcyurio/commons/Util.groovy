@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat
 /**
  * @author galcyurio
  */
-class Util {
+final class Util {
     static SimpleDateFormat sBaseDateFormat
     static SimpleDateFormat sBaseTimeFormat
     static SimpleDateFormat sBaseDateTimeFormat

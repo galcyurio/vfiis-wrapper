@@ -18,7 +18,7 @@ import retrofit2.Call;
 /**
  * @author galcyurio
  */
-public class RawVfiisClientTest {
+public class RawVfiisClientIntegrationTest {
     LocalDateTime baseDateTime;
     Integer nx = 60, ny = 127;
 
@@ -54,7 +54,7 @@ public class RawVfiisClientTest {
     }
 
     @Test
-    public void fetchForecastVersionCheckt() throws Exception {
+    public void fetchForecastVersionCheck() throws Exception {
         ForecastVersionCheckRequest request = new ForecastVersionCheckRequest(
                 baseDateTime.minusHours(5).toDate(), Forecast.Operation.GRIB);
         Call<Map<String, Object>> call = RawVfiisClient.getInstance().fetchForecastVersionCheck(request);
