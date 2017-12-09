@@ -22,7 +22,7 @@ class MockRawVfiisService implements RawVfiisService {
 
     MockRawVfiisService(BehaviorDelegate<RawVfiisService> delegate) {
         mDelegate = delegate
-        mockDirectory = new File(getClass().getClassLoader().getResource("mock").toURI())
+        mockDirectory = new File(getClass().getClassLoader().getResource("mockResponse").toURI())
 
         mObjectMapper = new ObjectMapper()
     }
