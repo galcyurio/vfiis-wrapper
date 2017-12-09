@@ -1,2 +1,37 @@
 group 'com.github.galcyurio'
 version '1.0-SNAPSHOT'
+
+ext.versions = [
+        version : '0.1.0',
+
+        groovy  : '2.3.11',
+        retrofit: '2.3.0',
+        okhttp  : '3.8.0',
+        findBugs: '3.0.2',
+
+        guava   : '23.2',
+        jodaTime: '2.9.9',
+        junit   : '4.12',
+        assertj : '2.6.0'
+]
+
+ext.deps = [
+        'groovy'  : "org.codehaus.groovy:groovy-all:${versions.groovy}",
+        'junit'   : "junit:junit:${versions.junit}",
+        'retrofit': [
+                'core'   : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                'mock'   : "com.squareup.retrofit2:retrofit-mock:${versions.retrofit}",
+                'jackson': "com.squareup.retrofit2:converter-jackson:${versions.retrofit}"
+        ],
+        'okhttp'  : [
+                'core': "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+                'mock': "com.squareup.okhttp3:mockwebserver:${versions.okhttp}"
+        ],
+        'assertj' : "org.assertj:assertj-core:${versions.assertj}",
+        'guava'   : [
+                'android': "com.google.guava:guava:${versions.guava}-android",
+                'jre'    : "com.google.guava:guava:${versions.guava}-jre"
+        ],
+        'findBugs' : "com.google.code.findbugs:jsr305:${versions.findBugs}",
+        'jodaTime': "joda-time:joda-time:${versions.jodaTime}"
+]
