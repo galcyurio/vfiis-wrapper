@@ -13,7 +13,7 @@ import groovy.transform.builder.Builder
 @EqualsAndHashCode
 @ToString(includeSuper = true)
 @Builder
-class ForecastVersionCheckResponse extends ForecastResponse {
+class ForecastVersionCheckResponse {
     /**
      * 파일 버전 생성 일자 및 시간
      */
@@ -23,4 +23,14 @@ class ForecastVersionCheckResponse extends ForecastResponse {
      * 파일 구분
      */
     Forecast.Operation operation
+
+    /**
+     * 결과 코드
+     */
+    String resultCode
+
+    /**
+     * 결과 메세지
+     */
+    String resultMsg
 }
