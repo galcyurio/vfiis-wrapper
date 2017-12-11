@@ -5,6 +5,7 @@ import com.github.galcyurio.config.Vfiis
 import com.github.galcyurio.core.RawVfiisBinder
 import com.github.galcyurio.core.RawVfiisService
 import com.github.galcyurio.response.ForecastGribResponse
+import com.github.galcyurio.response.ForecastResponse
 import com.github.galcyurio.response.ForecastSpaceDataResponse
 import com.github.galcyurio.response.ForecastTimeDataResponse
 import com.github.galcyurio.response.ForecastVersionCheckResponse
@@ -81,6 +82,25 @@ class RawVfiisBinderMockUnitTest {
                 .execute().body()
         ForecastVersionCheckResponse response = RawVfiisBinder.fromRawVersionCheckResponse(rawResponse)
         assertThat(response).hasNoNullFieldsOrProperties()
+    }
+
+    @Test
+    void bindCommonResponseTest__mustNotNull() throws Exception {
+        JsonNode rawResponse = sMockRawVfiisService.fetchForecastGrib(
+                "",
+                "", "",
+                0, 0,
+                0, 0)
+                .execute().body()
+        ForecastResponse response = ForecastGribResponse.builder().build()
+        RawVfiisBinder.bindCommonResponse(response, rawResponse)
+
+        assertThat(response.getBaseDateTime()).isNotNull()
+        assertThat(response.getResultCode()).isNotNull()
+        assertThat(response.getResultMsg()).isNotNull()
+        assertThat(response.getNumOfRows()).isNotNull()
+        assertThat(response.getPageNo()).isNotNull()
+        assertThat(response.getTotalCount()).isNotNull()
     }
 
 }
