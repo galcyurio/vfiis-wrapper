@@ -1,12 +1,8 @@
 package com.github.galcyurio.response
-
-import groovy.transform.Canonical
-
 /**
  * @author galcyurio
  */
-@Canonical
-class ForecastResponse {
+abstract class ForecastResponse {
     /**
      * 결과 코드
      */

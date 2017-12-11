@@ -1,14 +1,15 @@
 package com.github.galcyurio.response
 
-import groovy.transform.Canonical
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
 import groovy.transform.builder.Builder
-
 /**
  * 호출 메시지의 검색 조건에 따라 단기예보 정보를 제공한다.
  *
  * @author galcyurio
  */
-@Canonical
+@EqualsAndHashCode
+@ToString(includeSuper = true)
 @Builder
 class ForecastSpaceDataResponse extends ForecastResponse {
 

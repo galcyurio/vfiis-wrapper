@@ -1,13 +1,15 @@
 package com.github.galcyurio.response
 
-import groovy.transform.Canonical
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
 import groovy.transform.builder.Builder
 /**
  * 초단기 실황 정보
  *
  * @author galcyurio
  */
-@Canonical
+@EqualsAndHashCode
+@ToString(includeSuper = true)
 @Builder
 class ForecastGribResponse extends ForecastResponse {
 
