@@ -36,7 +36,7 @@ class MockRawVfiisService implements RawVfiisService {
             @Nonnull @Query("nx") Integer nx, @Nonnull @Query("ny") Integer ny,
             @Nullable @Query("numOfRows") Integer numOfRows, @Nullable @Query("pageNo") Integer pageNo) {
         String content = new File(mockDirectory, "forecastGribResponse.json").getText()
-        JsonNode response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readTree(content)
         return mDelegate.returningResponse(response).fetchForecastGrib(
                 serviceKey, baseDate, baseTime, nx, ny, numOfRows, pageNo)
     }
@@ -49,7 +49,7 @@ class MockRawVfiisService implements RawVfiisService {
             @Nonnull @Query("nx") Integer nx, @Nonnull @Query("ny") Integer ny,
             @Nullable @Query("numOfRows") Integer numOfRows, @Nullable @Query("pageNo") Integer pageNo) {
         String content = new File(mockDirectory, "forecastSpaceDataResponse.json").getText()
-        JsonNode response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readTree(content)
         return mDelegate.returningResponse(response).fetchForecastSpaceData(
                 serviceKey, baseDate, baseTime, nx, ny, numOfRows, pageNo)
     }
@@ -62,7 +62,7 @@ class MockRawVfiisService implements RawVfiisService {
             @Nonnull @Query("nx") Integer nx, @Nonnull @Query("ny") Integer ny,
             @Nullable @Query("numOfRows") Integer numOfRows, @Nullable @Query("pageNo") Integer pageNo) {
         String content = new File(mockDirectory, "forecastTimeDataResponse.json").getText()
-        JsonNode response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readTree(content)
         return mDelegate.returningResponse(response).fetchForecastTimeData(
                 serviceKey, baseDate, baseTime, nx, ny, numOfRows, pageNo)
     }
@@ -73,7 +73,7 @@ class MockRawVfiisService implements RawVfiisService {
             @Nonnull @Query("ftype") String ftype,
             @Nonnull @Query("basedatetime") String baseDateTime) {
         String content = new File(mockDirectory, "forecastVersionCheckResponse.json").getText()
-        JsonNode response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readTree(content)
         return mDelegate.returningResponse(response).fetchForecastVersionCheck(
                 serviceKey, ftype, baseDateTime)
     }

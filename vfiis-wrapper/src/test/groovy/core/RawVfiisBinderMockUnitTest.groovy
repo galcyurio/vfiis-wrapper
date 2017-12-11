@@ -1,5 +1,6 @@
 package core
 
+import com.fasterxml.jackson.databind.JsonNode
 import com.github.galcyurio.config.Vfiis
 import com.github.galcyurio.core.RawVfiisBinder
 import com.github.galcyurio.core.RawVfiisService
@@ -39,7 +40,7 @@ class RawVfiisBinderMockUnitTest {
 
     @Test
     void fetchForecastGribTest() throws Exception {
-        Map<String, Object> rawResponse = sMockRawVfiisService.fetchForecastGrib(
+        JsonNode rawResponse = sMockRawVfiisService.fetchForecastGrib(
                 "",
                 "", "",
                 0, 0,
@@ -51,7 +52,7 @@ class RawVfiisBinderMockUnitTest {
 
     @Test
     void fetchForecastSpaceData() throws Exception {
-        Map<String, Object> rawResponse = sMockRawVfiisService.fetchForecastSpaceData(
+        JsonNode rawResponse = sMockRawVfiisService.fetchForecastSpaceData(
                 "",
                 "", "",
                 0, 0,
@@ -63,7 +64,7 @@ class RawVfiisBinderMockUnitTest {
 
     @Test
     void fetchForecastTimeData() throws Exception {
-        Map<String, Object> rawResponse = sMockRawVfiisService.fetchForecastTimeData(
+        JsonNode rawResponse = sMockRawVfiisService.fetchForecastTimeData(
                 "",
                 "", "",
                 0, 0,
@@ -75,7 +76,7 @@ class RawVfiisBinderMockUnitTest {
 
     @Test
     void fetchForecastVersionCheck() throws Exception {
-        Map<String, Object> rawResponse = sMockRawVfiisService.fetchForecastVersionCheck(
+        JsonNode rawResponse = sMockRawVfiisService.fetchForecastVersionCheck(
                 "", "", "")
                 .execute().body()
         ForecastVersionCheckResponse response = RawVfiisBinder.fromRawVersionCheckResponse(rawResponse)
