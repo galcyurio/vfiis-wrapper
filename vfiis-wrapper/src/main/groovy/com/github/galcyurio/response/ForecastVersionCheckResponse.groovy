@@ -11,7 +11,7 @@ import groovy.transform.builder.Builder
  * @author galcyurio
  */
 @EqualsAndHashCode
-@ToString(includeSuper = true)
+@ToString
 @Builder
 class ForecastVersionCheckResponse {
     /**
