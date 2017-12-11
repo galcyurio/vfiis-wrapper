@@ -1,5 +1,6 @@
 package com.github.galcyurio.core
 
+import com.fasterxml.jackson.databind.JsonNode
 import com.github.galcyurio.commons.Util
 import com.github.galcyurio.config.Configuration
 import com.github.galcyurio.config.Vfiis
@@ -48,7 +49,7 @@ class RawVfiisClient {
     /**
      * 검색 조건에 따라 초단기 실황 정보를 제공한다.
      */
-    Call<Map<String,Object>> fetchForecastGrib(ForecastRequest request) {
+    Call<JsonNode> fetchForecastGrib(ForecastRequest request) {
         return mVfiisService.fetchForecastGrib(
                 mConfiguration.serviceKey,
                 Util.dateToVfiisBaseDate(request.baseDateTime),
@@ -61,7 +62,7 @@ class RawVfiisClient {
     /**
      * 검색 조건에 따라 동네 예보 정보를 제공한다.
      */
-    Call<Map<String,Object>> fetchForecastSpaceData(ForecastRequest request) {
+    Call<JsonNode> fetchForecastSpaceData(ForecastRequest request) {
         return mVfiisService.fetchForecastSpaceData(
                 mConfiguration.serviceKey,
                 Util.dateToVfiisBaseDate(request.baseDateTime), Util.dateToVfiisBaseTime(request.baseDateTime),
@@ -73,7 +74,7 @@ class RawVfiisClient {
     /**
      * 검색 조건에 따라 단기 예보 정보를 제공한다.
      */
-    Call<Map<String,Object>> fetchForecastTimeData(ForecastRequest request) {
+    Call<JsonNode> fetchForecastTimeData(ForecastRequest request) {
         return mVfiisService.fetchForecastTimeData(
                 mConfiguration.serviceKey,
                 Util.dateToVfiisBaseDate(request.baseDateTime), Util.dateToVfiisBaseTime(request.baseDateTime),
@@ -85,7 +86,7 @@ class RawVfiisClient {
     /**
      * 검색 조건에 따라 실황 정보를 조회한다.
      */
-    Call<Map<String,Object>> fetchForecastVersionCheck(ForecastVersionCheckRequest request) {
+    Call<JsonNode> fetchForecastVersionCheck(ForecastVersionCheckRequest request) {
         return mVfiisService.fetchForecastVersionCheck(
                 mConfiguration.serviceKey,
                 request.operation.value,

@@ -1,5 +1,6 @@
 package core;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.github.galcyurio.commons.Forecast;
 import com.github.galcyurio.config.Configuration;
 import com.github.galcyurio.core.RawVfiisClient;
@@ -10,8 +11,6 @@ import org.joda.time.LocalDateTime;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.Map;
 
 import retrofit2.Call;
 
@@ -35,21 +34,21 @@ public class RawVfiisClientIntegrationTest {
     @Test
     public void fetchForecastGrib() throws Exception {
         ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), nx, ny);
-        Map<String, Object> body = RawVfiisClient.getInstance().fetchForecastGrib(request).execute().body();
+        JsonNode body = RawVfiisClient.getInstance().fetchForecastGrib(request).execute().body();
         System.out.println(body);
     }
 
     @Test
     public void fetchForecastSpaceData() throws Exception {
         ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), nx, ny);
-        Map<String, Object> body = RawVfiisClient.getInstance().fetchForecastSpaceData(request).execute().body();
+        JsonNode body = RawVfiisClient.getInstance().fetchForecastSpaceData(request).execute().body();
         System.out.println(body);
     }
 
     @Test
     public void fetchForecastTimeData() throws Exception {
         ForecastRequest request = new ForecastRequest(baseDateTime.toDate(), nx, ny);
-        Map<String, Object> body = RawVfiisClient.getInstance().fetchForecastTimeData(request).execute().body();
+        JsonNode body = RawVfiisClient.getInstance().fetchForecastTimeData(request).execute().body();
         System.out.println(body);
     }
 
@@ -57,10 +56,10 @@ public class RawVfiisClientIntegrationTest {
     public void fetchForecastVersionCheck() throws Exception {
         ForecastVersionCheckRequest request = new ForecastVersionCheckRequest(
                 baseDateTime.minusHours(5).toDate(), Forecast.Operation.GRIB);
-        Call<Map<String, Object>> call = RawVfiisClient.getInstance().fetchForecastVersionCheck(request);
+        Call<JsonNode> call = RawVfiisClient.getInstance().fetchForecastVersionCheck(request);
         System.out.println(call.request().toString());
 
-        Map<String, Object> body = call.execute().body();
+        JsonNode body = call.execute().body();
         System.out.println(body);
     }
 }

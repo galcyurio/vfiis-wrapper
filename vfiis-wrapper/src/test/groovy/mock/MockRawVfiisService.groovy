@@ -1,5 +1,6 @@
 package mock
 
+import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.github.galcyurio.core.RawVfiisService
 import okhttp3.MediaType
@@ -28,51 +29,51 @@ class MockRawVfiisService implements RawVfiisService {
     }
 
     @Override
-    Call<Map<String, Object>> fetchForecastGrib(
+    Call<JsonNode> fetchForecastGrib(
             @Nonnull @Query("serviceKey") String serviceKey,
             @Nonnull @Query("base_date") String baseDate,
             @Nonnull @Query("base_time") String baseTime,
             @Nonnull @Query("nx") Integer nx, @Nonnull @Query("ny") Integer ny,
             @Nullable @Query("numOfRows") Integer numOfRows, @Nullable @Query("pageNo") Integer pageNo) {
         String content = new File(mockDirectory, "forecastGribResponse.json").getText()
-        Map<String, Object> response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readValue(content, Map)
         return mDelegate.returningResponse(response).fetchForecastGrib(
                 serviceKey, baseDate, baseTime, nx, ny, numOfRows, pageNo)
     }
 
     @Override
-    Call<Map<String, Object>> fetchForecastSpaceData(
+    Call<JsonNode> fetchForecastSpaceData(
             @Nonnull @Query("serviceKey") String serviceKey,
             @Nonnull @Query("base_date") String baseDate,
             @Nonnull @Query("base_time") String baseTime,
             @Nonnull @Query("nx") Integer nx, @Nonnull @Query("ny") Integer ny,
             @Nullable @Query("numOfRows") Integer numOfRows, @Nullable @Query("pageNo") Integer pageNo) {
         String content = new File(mockDirectory, "forecastSpaceDataResponse.json").getText()
-        Map<String, Object> response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readValue(content, Map)
         return mDelegate.returningResponse(response).fetchForecastSpaceData(
                 serviceKey, baseDate, baseTime, nx, ny, numOfRows, pageNo)
     }
 
     @Override
-    Call<Map<String, Object>> fetchForecastTimeData(
+    Call<JsonNode> fetchForecastTimeData(
             @Nonnull @Query("serviceKey") String serviceKey,
             @Nonnull @Query("base_date") String baseDate,
             @Nonnull @Query("base_time") String baseTime,
             @Nonnull @Query("nx") Integer nx, @Nonnull @Query("ny") Integer ny,
             @Nullable @Query("numOfRows") Integer numOfRows, @Nullable @Query("pageNo") Integer pageNo) {
         String content = new File(mockDirectory, "forecastTimeDataResponse.json").getText()
-        Map<String, Object> response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readValue(content, Map)
         return mDelegate.returningResponse(response).fetchForecastTimeData(
                 serviceKey, baseDate, baseTime, nx, ny, numOfRows, pageNo)
     }
 
     @Override
-    Call<Map<String, Object>> fetchForecastVersionCheck(
+    Call<JsonNode> fetchForecastVersionCheck(
             @Nonnull @Query("serviceKey") String serviceKey,
             @Nonnull @Query("ftype") String ftype,
             @Nonnull @Query("basedatetime") String baseDateTime) {
         String content = new File(mockDirectory, "forecastVersionCheckResponse.json").getText()
-        Map<String, Object> response = mObjectMapper.readValue(content, Map)
+        JsonNode response = mObjectMapper.readValue(content, Map)
         return mDelegate.returningResponse(response).fetchForecastVersionCheck(
                 serviceKey, ftype, baseDateTime)
     }
