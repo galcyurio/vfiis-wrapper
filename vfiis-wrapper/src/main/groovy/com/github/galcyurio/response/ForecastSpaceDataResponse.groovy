@@ -1,5 +1,6 @@
 package com.github.galcyurio.response
 
+import com.github.galcyurio.commons.Forecast
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import groovy.transform.builder.Builder
@@ -22,17 +23,13 @@ class ForecastSpaceDataResponse extends ForecastResponse {
 
     /**
      * 6시간 강수량
-     * <p>unit : 범주(1 mm)</p>
-     * <p>ex) -1</p>
      */
-    Integer RO6
+    Forecast.Rain RO6
 
     /**
      * 6시간 신적설
-     * <p>unit : 범주(1 cm)</p>
-     * <p>ex) -1</p>
      */
-    Integer SO6
+    Forecast.Snow SO6
 
     /**
      * 3시간 기온
@@ -63,11 +60,9 @@ class ForecastSpaceDataResponse extends ForecastResponse {
     Integer WAV
 
     /**
-     * 강수형태 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
+     * 강수 형태
      */
-    Integer PTY
+    Forecast.PTY PTY
 
     /**
      * 습도
@@ -77,25 +72,19 @@ class ForecastSpaceDataResponse extends ForecastResponse {
     Integer REH
 
     /**
-     * 동서바람성분
-     * <p>unit : m/s</p>
-     * <p>ex) -100</p>
+     * 동서 바람 성분
      */
-    Integer UUU
+    Forecast.UUU UUU
 
     /**
-     * 남북바람성분
-     * <p>unit : m/s</p>
-     * <p>ex) -100</p>
+     * 남북 바람 성분
      */
-    Integer VVV
+    Forecast.VVV VVV
 
     /**
-     * 하늘상태 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
+     * 하늘 상태
      */
-    Integer SKY
+    Forecast.SKY SKY
 
     /**
      * 풍향

@@ -1,5 +1,6 @@
 package com.github.galcyurio.response
 
+import com.github.galcyurio.commons.Forecast
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import groovy.transform.builder.Builder
@@ -22,24 +23,18 @@ class ForecastGribResponse extends ForecastResponse {
 
     /**
      * 1 시간 강수량
-     * <p>unit : mm</p>
-     * <p>ex) -1</p>
      */
-    Integer RN1
+    Forecast.Rain RN1
 
     /**
-     * 낙뢰 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
+     * 낙뢰 여부
      */
-    Integer LGT
+    boolean LGT
 
     /**
-     * 강수형태 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
+     * 강수 형태
      */
-    Integer PTY
+    Forecast.PTY PTY
 
     /**
      * 습도
@@ -49,25 +44,19 @@ class ForecastGribResponse extends ForecastResponse {
     Integer REH
 
     /**
-     * 동서바람성분
-     * <p>unit : m/s</p>
-     * <p>ex) -100</p>
+     * 동서 바람 성분
      */
-    Integer UUU
+    Forecast.UUU UUU
 
     /**
-     * 남북바람성분
-     * <p>unit : m/s</p>
-     * <p>ex) -100</p>
+     * 남북 바람 성분
      */
-    Integer VVV
+    Forecast.VVV VVV
 
     /**
-     * 하늘상태 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
+     * 하늘상태
      */
-    Integer SKY
+    Forecast.SKY SKY
 
     /**
      * 풍향

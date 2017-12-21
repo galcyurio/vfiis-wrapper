@@ -1,10 +1,9 @@
 package com.github.galcyurio.response
 
-import groovy.transform.Canonical
+import com.github.galcyurio.commons.Forecast
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import groovy.transform.builder.Builder
-
 /**
  * 호출 메시지의 검색 조건에 따라 초단기예보 정보를 제공한다.
  *
@@ -24,24 +23,18 @@ class ForecastTimeDataResponse extends ForecastResponse {
 
     /**
      * 1 시간 강수량
-     * <p>unit : mm</p>
-     * <p>ex) -1</p>
      */
-    Integer RN1
+    Forecast.Rain RN1
 
     /**
-     * 낙뢰 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
+     * 낙뢰
      */
-    Integer LGT
+    Forecast.LGT LGT
 
     /**
-     * 강수형태 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
+     * 강수 형태
      */
-    Integer PTY
+    Forecast.PTY PTY
 
     /**
      * 습도
@@ -51,25 +44,21 @@ class ForecastTimeDataResponse extends ForecastResponse {
     Integer REH
 
     /**
-     * 동서바람성분
+     * 동서 바람 성분
+     */
+    Forecast.UUU UUU
+
+    /**
+     * 남북 바람 성분
      * <p>unit : m/s</p>
      * <p>ex) -100</p>
      */
-    Integer UUU
+    Forecast.VVV VVV
 
     /**
-     * 남북바람성분
-     * <p>unit : m/s</p>
-     * <p>ex) -100</p>
+     * 하늘 상태
      */
-    Integer VVV
-
-    /**
-     * 하늘상태 코드값
-     * <p>unit : 코드값</p>
-     * <p>ex) -1</p>
-     */
-    Integer SKY
+    Forecast.SKY SKY
 
     /**
      * 풍향
