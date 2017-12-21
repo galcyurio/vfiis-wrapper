@@ -101,6 +101,8 @@ class RawVfiisBinderMockUnitTest {
         assertThat(response.getNumOfRows()).isNotNull()
         assertThat(response.getPageNo()).isNotNull()
         assertThat(response.getTotalCount()).isNotNull()
+        assertThat(response.getNx()).isNotNull()
+        assertThat(response.getNy()).isNotNull()
     }
 
 }

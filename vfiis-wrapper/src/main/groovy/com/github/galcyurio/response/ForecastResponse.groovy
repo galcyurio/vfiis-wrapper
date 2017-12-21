@@ -32,4 +32,14 @@ abstract class ForecastResponse {
      * 발표 일자, 발표 시각
      */
     Date baseDateTime
+
+    /**
+     * x 좌표
+     */
+    Integer nx
+
+    /**
+     * y 좌표
+     */
+    Integer ny
 }
